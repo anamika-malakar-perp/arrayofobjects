@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Array of objects questions</h3>
+    <pre>
+        "let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+            {name: 'Baba', id: 101, marks : 23 },
+            {name: 'yaga', id: 200, marks : 45 },
+            {name: 'Wick', id: 115, marks : 75 } ] "
+    </pre>
+    <p>
+        1."We are interested in retrieving only the students' names; all the names should be in caps.
+        ['JOHN', 'BABA', 'YAGA', 'WICK']"
+    </p>
+    <pre>
+        function retrieveStudentName() {
+            let names = [];
+            studentRecords.forEach(element => {
+                names.push(element.name.toUpperCase());
+            });
+            console.log(names);
+        }
+
+        retrieveStudentName();
+    </pre>
+    <p>2."Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks.
+        [{name: 'John', id: 123, marks: 98 },{name: 'Wick', id: 115, marks: 75 }]"
+    </p>
+    <pre>
+        function studentScoredMore() {
+            let names = [];
+            studentRecords.forEach(element => {
+                if(element.marks > 50) {
+                    names.push(element);
+                }
+            });
+            console.log(names);
+        }
+
+        studentScoredMore();
+    </pre>
+    <p>3.Retrieve the details of students who scored more than 50 marks and have IDs greater than 120.</p>
+    <pre>
+        function studentScoredMoreAndId() {
+            let names = [];
+            studentRecords.forEach(element => {
+                if(element.marks > 50 && element.id > 120) {
+                    names.push(element);
+                }
+            });
+            console.log(names);
+        }
+
+        studentScoredMoreAndId();
+    </pre>
+    <p>4.Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students.</p>
+    <pre>
+        function totalMarks() {
+            let sum = 0;
+            studentRecords.forEach(element => {
+                sum = sum + element.marks
+            });
+            console.log(sum);
+        }
+
+        totalMarks();
+    </pre>
+    <p>5.This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above.</p>
+    <pre>
+        function studentNames() {
+            let names = [];
+            studentRecords.forEach(element => {
+                if(element.marks > 50) {
+                    names.push(element.name);
+                }
+            });
+            console.log(names);
+        }
+
+        studentNames();
+    </pre>
+    <p>6.This time we are required to print the sum of marks of the students with id > 120.</p>
+    <pre>
+        function studentNames() {
+            let sum = 0;
+            studentRecords.forEach(element => {
+                if(element.id > 120) {
+                    sum = sum + element.marks;
+                }
+            });
+            console.log(sum);
+        }
+
+        studentNames();
+    </pre>
+    <p>7.This time we are required to print the total marks of the students with marks greater than 50 after a grace of 15 marks has been added to those students 
+        who scored less than 50.</p>
+    <pre>
+        function studentNames() {
+            let sum = 0;
+            studentRecords.forEach(element => {
+                if(element.marks < 50) {
+                    element.marks = element.marks + 15;
+                }
+                sum = sum + element.marks;
+            });
+            console.log(sum);
+        }
+
+        studentNames();
+    </pre>
+    <p>
+        8.Create 6 objects , each object will have name, class, roll no as properties. Store these objects in an array of objects. 
+    </p>
+    <pre>
+        obj1 = {
+            name: 'Anamika',
+            class: 1,
+            rollNo: 1
+        }
+        obj2 = {
+            name: 'Prashanth',
+            class: 2,
+            rollNo: 2
+        }
+        obj3 = {
+            name: 'Ayan',
+            class: 3,
+            rollNo: 3
+        }
+        obj4 = {
+            name: 'Unknown',
+            class: 4,
+            rollNo: 4
+        }
+        obj5 = {
+            name: 'People',
+            class: 5,
+            rollNo: 5
+        }
+        obj6 = {
+            name: 'Babli',
+            class: 6,
+            rollNo: 6
+        }
+
+        let array = [obj1,obj2,obj3,obj4,obj5,obj6];
+        console.log(array)
+    </pre>
+</body>
+</html>
